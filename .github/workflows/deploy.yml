@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v3  # Checkout your repository code
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0
+          ruby-version: 3.0  # Specify the Ruby version you need
 
       - name: Install dependencies
         run: |
@@ -24,15 +24,11 @@ jobs:
           bundle install
 
       - name: Build site
-        run: bundle exec jekyll build
-
-      - name: Clear Git credentials  # Added to clear credentials before deployment
-        run: |
-          git config --global --unset credential.helper
+        run: bundle exec jekyll build  # Build the site into _site directory
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./_site  # Deploy the _site directory to GitHub Pages
 
