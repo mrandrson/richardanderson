@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Personal website of Richard Anderson, aspiring graduate student in Physics.">
+    <title>{{ page.title }} | Richard Anderson</title>
+    
+    <!-- General Styles for Professional and Clean Layout -->
+    <style>
+        body {
+            font-family: 'Tahoma', serif; /* Serif font for a professional look */
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9; /* Light, professional background */
+            color: #333; /* Dark gray text */
+        }
+
+        /* Header with a Clean Look */
+        header {
+            background: url('https://images.unsplash.com/photo-1447433553548-2fc162393482?q=80&w=2730&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D') no-repeat center center;
+            background-size: cover;
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        header h1 {
+            font-size: 3.5em;
+            margin: 0;
+            font-weight: 300; /* Lighter font weight */
+				padding-bottom: 20px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #ffffff;
+            padding: 10px;
+            border-bottom: 1px solid #ccc;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2em;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0073e6; /* Subtle blue hover effect */
+        }
+
+        /* Main Content Area */
+        .container {
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: -100px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .container h2 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container p {
+            line-height: 1.6;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f4f4f9;
+            color: #777;
+            border-top: 1px solid #ccc;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #0073e6;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/cv">CV</a>
+        <a href="/contact">Contact</a>
+    </nav>
+
+    <!-- Header with Clean, Professional Look -->
+    <header>
+        <h1>Richard Anderson</h1>
+    </header>
+
+    <!-- Main Content Area -->
+    <div class="container">
+        <section class="content-section">
+            <h2>{{ page.title }}</h2>
+            <div>
+                {{ content }}
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Richard Anderson | <a href="mailto:richard.b.anderson@icloud.com">richard.b.anderson@icloud.com</a></p>
+    </footer>
+
+</body>
+</html>
+
