@@ -3,7 +3,7 @@ name: Jekyll Site CI
 on:
   push:
     branches:
-      - main
+      - main  # Or the branch you're pushing from
 
 jobs:
   build:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Updated to v3, which uses Node 16/20
+        uses: actions/checkout@v3  # Checkout the repository code
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1  # Set to your required Ruby version
+          ruby-version: 3.0  # Or your version of Ruby
 
       - name: Install dependencies
         run: |
@@ -24,11 +24,11 @@ jobs:
           bundle install
 
       - name: Build site
-        run: bundle exec jekyll build
+        run: bundle exec jekyll build  # Build the Jekyll site into the _site directory
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4  # Updated to v4, which supports Node 16/20
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+          publish_dir: ./_site  # Deploy the _site directory
 
