@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3  # Updated to v3, which uses Node 16/20
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1 # or whichever version you're using
+          ruby-version: 3.1  # Set to your required Ruby version
 
       - name: Install dependencies
         run: |
@@ -27,7 +27,7 @@ jobs:
         run: bundle exec jekyll build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4  # Updated to v4, which supports Node 16/20
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./_site
