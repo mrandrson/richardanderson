@@ -13,7 +13,7 @@ layout: richardbase
   
   <!-- Right Column for Image -->
   <div style="flex: 1;">
-    <img src="/assets/files/pictureofme.jpg" alt="Picture of Me" style="max-width: 100%; height: auto;">
+    <img src="{{ site.baseurl }}/assets/files/pictureofme.jpg" alt="Picture of Me" style="max-width: 100%; height: auto;">
   </div>
 </div>
 
