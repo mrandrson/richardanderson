@@ -3,7 +3,7 @@ name: Jekyll Site CI
 on:
   push:
     branches:
-      - main  # Or the branch you're pushing from
+      - main
 
 jobs:
   build:
@@ -11,12 +11,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Checkout the repository code
+        uses: actions/checkout@v3
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.0  # Or your version of Ruby
+          ruby-version: 3.0
 
       - name: Install dependencies
         run: |
@@ -24,11 +24,15 @@ jobs:
           bundle install
 
       - name: Build site
-        run: bundle exec jekyll build  # Build the Jekyll site into the _site directory
+        run: bundle exec jekyll build
+
+      - name: Clear Git credentials  # Added to clear credentials before deployment
+        run: |
+          git config --global --unset credential.helper
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site  # Deploy the _site directory
+          publish_dir: ./_site
 
