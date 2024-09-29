@@ -4,7 +4,7 @@ title: Research
 permalink: /research/
 ---
 
-# Richard Research Experience
+# Research Experience
 
 ## Theoretical/Computational Astrophysics
 
@@ -12,7 +12,7 @@ permalink: /research/
 
 ## Computational Particle Physics
 
-# Richard Teaching Experience 
+# Teaching Experience 
 
 ## El Paso Community College Academic Tutor
 
