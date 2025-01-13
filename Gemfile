@@ -22,6 +22,7 @@ end
 
 gem "csv"      # Required for Jekyll processing
 gem "logger"   # Resolves logger warnings
+gem "base64"
 
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
