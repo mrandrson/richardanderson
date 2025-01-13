@@ -3,21 +3,33 @@ layout: richardbase
 title: Personal Projects
 permalink: /personalprojects/
 ---
-<div style="display: flex; justify-content: space-between;">
-
-  <!-- First Column -->
-  <div style="flex: 1; text-align: center; margin-right: 20px;">
-    <a class="page-link" href="{{ "/personalprojects/spherpendulum/" | relative_url }}" style="font-size: 24px;">Spinning Pendulum</a>
-    <br>
-    <img src="../assets/files/spinning_pendulum.gif" alt="Spherical Pendulum Motion" style="width: 500px; height: auto;">
-  </div>
-
-  <!-- Second Column -->
+<!---
+<div style="text-align: center; margin-bottom: 40px;">
+  <h1 style="font-size: 32px ; margin: 0; color: white;">Personal Projects</h1>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: center; gap: 20px;">
   <div style="flex: 1; text-align: center;">
-    <a class="page-link" href="{{ "/personalprojects/astrostuff/" | relative_url }}" style="font-size: 24px;">Astrophysical Simulations</a>
-    <br>
-    <img src="../assets/files/planetesimal-animation.gif" alt="Planetesimal Orbit" style="width: 500px; height: auto;">
+    <a class="page-link" href="../assets/files/Spinning_Pendulum.pdf" style="font-size: 24px; display: block; margin-bottom: 10px;">Spinning Pendulum</a>
+    <img src="../assets/files/spinning_pendulum.gif" alt="Spherical Pendulum Motion" style="width: 100%; max-width: 500px; height: auto;">
   </div>
+  <div style="flex: 1; text-align: center;">
+    <a class="page-link" href="{{ site.baseurl }}/assets/files/Galaxy_Collision.pdf" style="font-size: 24px; display: block; margin-bottom: 10px;">N-Body Simulation</a>
+    <img src="{{ site.baseurl }}/assets/files/BinaryCollision.mp4" alt="N-Body Simulation" style="width: 100%; max-width: 500px; height: auto;">
+  </div>
+</div>
+--->
 
+<div style="text-align: center; margin-bottom: 40px;">
+  <h1 style="font-size: 32px; margin: 0; color: white;">Personal Projects</h1>
+</div>
+<div style="display: flex; justify-content: space-around; align-items: flex-start; gap: 20px;">
+  <div style="flex: 1; text-align: center;">
+    <a class="page-link" href="../assets/files/Spinning_Pendulum.pdf" style="font-size: 24px; display: block; margin-bottom: 10px;">Spinning Pendulum</a>
+    <img src="../assets/files/spinning_pendulum.gif" alt="Spherical Pendulum Motion" style="width: 100%; max-width: 500px; height: auto;">
+  </div>
+  <div style="flex: 1; text-align: center;">
+    <a class="page-link" href="{{ site.baseurl }}/assets/files/Galaxy_Collision.pdf" style="font-size: 24px; display: block; margin-bottom: 10px;">N-Body Simulation</a>
+    <img src="{{ site.baseurl }}/assets/files/BinaryCollision.mp4" alt="N-Body Simulation" style="width: 100%; max-width: 500px; height: auto;">
+  </div>
 </div>
 
