@@ -20,6 +20,9 @@ group :jekyll_plugins do
   gem "jekyll-seo-tag", "~> 2.7"  # Add this line for SEO
 end
 
+gem "csv"      # Required for Jekyll processing
+gem "logger"   # Resolves logger warnings
+
 # Windows and JRuby does not include zoneinfo files, so bundle the tzinfo-data gem
 # and associated library.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
