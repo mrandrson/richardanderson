@@ -143,15 +143,29 @@ This ensures smaller time steps in regions of steep gradients, preventing instab
 Here, I show some examples of the regression algorithm in use. The regression scheme is implemented in C++, and animation is done using Python's Matplotlib package. 
 
 <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+  <div style="text-align: center; flex: 1; min-width: 300px;">
+    <img src="../assets/files/fit_evolution.mp4" alt="Larson Mass Plot" style="width: auto; height: 400px;">
+    <p>Figure 1: Gaussian Fit</p>
+  </div>
+
+  <div style="text-align: center; flex: 1; min-width: 300px;">
+    <img src="../assets/files/fit_evolution2.mp4" alt="Shu Mass Plot" style="width: auto; height: 400px;">
+    <p>Figure 2: Sinusoidal Fit</p>
+  </div>
+</div>
+
+<!---
+<div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
 
   <div style="text-align: center; flex: 1; min-width: 300px;">
     <img src="../assets/files/fit_evolution.mp4" alt="Larson Mass Plot" style="width: 100%; max-width: 600px; height: auto;">
-    <p>Figure 1: Larson Mass Plot</p>
+    <p>Figure 1: Gaussian Fit</p>
   </div>
 
   <div style="text-align: center; flex: 1; min-width: 300px;">
     <img src="../assets/files/fit_evolution2.mp4" alt="Shu Mass Plot" style="width: 100%; max-width: 500px; height: auto;">
-    <p>Figure 2: Shu Mass Plot</p>
+    <p>Figure 2: Sinusoidal Fit</p>
   </div>
 
 </div>
+--->
