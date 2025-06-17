@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}">
+
+  {%- include richardhead.html -%}
+  
+  <!-- Old -->
+  <!--
+  <body style="background-color: #1e1e1e; color: #e0e0e0;"> 
+  -->
+  
+  <!-- NEW -->
+  <body style="background-color: #ffffff; color: #1e1e1e; font-family: 'Segoe UI', sans-serif;">
+
+    {%- include richardheader.html -%}
+
+    <main class="page-content" aria-label="Content">
+    <!-- Old -->
+    <!--<div class="wrapper" style="background-color: #1e1e1e; padding: 10px; border-radius: 0px;">--> 
+
+    <div class="wrapper">
+
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include richardfooter.html -%}
+
+  </body>
+
+</html>

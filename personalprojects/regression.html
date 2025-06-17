@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Least Squares Regression | Richard Anderson</title>
+<meta name="generator" content="Jekyll v4.3.4" />
+<meta property="og:title" content="Least Squares Regression" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="https://mrandrson.github.io/richardanderson/personalprojects/regression" />
+<meta property="og:url" content="https://mrandrson.github.io/richardanderson/personalprojects/regression" />
+<meta property="og:site_name" content="Richard Anderson" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Least Squares Regression" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Least Squares Regression","url":"https://mrandrson.github.io/richardanderson/personalprojects/regression"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/richardanderson/assets/richardmain.css"><link type="application/atom+xml" rel="alternate" href="https://mrandrson.github.io/richardanderson/feed.xml" title="Richard Anderson" /><script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+
+  <script type="text/javascript">
+    MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true
+      }
+    };
+  </script>
+</head>
+
+<!-- Old -->
+  <!--
+  <body style="background-color: #1e1e1e; color: #e0e0e0;"> 
+  -->
+  
+  <!-- NEW -->
+  <body style="background-color: #ffffff; color: #1e1e1e; font-family: 'Segoe UI', sans-serif;"><!--
+<header class="site-header" style="background-color: #f9f9f9; border-bottom: 1px solid #ddd; padding: 15px 0;">
+  <div class="wrapper" style="display: flex; justify-content: space-between; align-items: center;">
+
+    <a class="site-title" href="/richardanderson/" style="color: #000; font-weight: bold; font-size: 20px;">
+      Richard Anderson
+    </a>
+
+    <nav class="site-nav" style="display: flex; gap: 30px; position: relative;">
+      <div class="dropdown" style="position: relative;">
+        <a href="#" style="color: #333; text-decoration: none;">RESEARCH &#8595;</a>
+        <div class="dropdown-content" style="display: none; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ccc; padding: 10px 0; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <a href="/richardanderson/pproject/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">Planetesimal Project</a>
+          <a href="/richardanderson/nextdataanalysis/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">NEXT Data Analysis</a>
+          <a href="/richardanderson/missilesystems/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">Missile Systems Design</a>
+        </div>
+      </div>
+
+      <div class="dropdown" style="position: relative;">
+        <a href="#" style="color: #333; text-decoration: none;">PERSONAL PROJECTS &#8595;</a>
+        <div class="dropdown-content" style="display: none; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ccc; padding: 10px 0; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <a href="/richardanderson/personalprojects/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">Personal Projects</a>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+  document.querySelectorAll('.dropdown').forEach(drop => {
+    drop.addEventListener('mouseenter', () => {
+      const content = drop.querySelector('.dropdown-content');
+      if (content) content.style.display = 'block';
+    });
+    drop.addEventListener('mouseleave', () => {
+      const content = drop.querySelector('.dropdown-content');
+      if (content) content.style.display = 'none';
+    });
+  });
+</script>
+-->
+
+<header class="site-header" style="background-color: #222; border-bottom: 1px solid #444; padding: 15px 0;">
+  <div class="wrapper" style="display: flex; justify-content: space-between; align-items: center;">
+
+    <a class="site-title" href="/richardanderson/" style="color: #ffffff; font-size: 24px;">
+      Richard Anderson
+    </a>
+    
+    <!--
+    Old
+    <nav class="site-nav" style="display: flex; gap: 30px; position: relative;">
+    -->
+    <nav class="site-nav" style="margin-left: auto; display: flex; gap: 30px; position: relative;">
+      <!-- Research Dropdown -->
+      <div class="dropdown" style="position: relative;">
+        <a href="#" style="color: #ffffff; text-decoration: none;">Research &#9207;</a>
+        <div class="dropdown-content" style="display: none; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ccc; padding: 10px 0; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <a href="/richardanderson/pproject/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">Planetesimal Project</a>
+          <a href="/richardanderson/nextdataanalysis/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">NEXT Data Analysis</a>
+          <a href="/richardanderson/missilesystems/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">Missile Systems Design</a>
+        </div>
+      </div>
+
+      <!-- Personal Projects Dropdown -->
+      <div class="dropdown" style="position: relative;">
+        <a href="#" style="color: #ffffff; text-decoration: none;">Personal Projects &#9207;</a>
+        <div class="dropdown-content" style="display: none; position: absolute; top: 100%; left: 0; background-color: white; border: 1px solid #ccc; padding: 10px 0; min-width: 200px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+          <a href="/richardanderson/personalprojects/" style="display: block; padding: 10px 20px; color: #333; text-decoration: none;">Personal Projects</a>
+        </div>
+      </div>
+    </nav>
+
+  </div>
+</header>
+
+<script>
+  document.querySelectorAll('.dropdown').forEach(drop => {
+    drop.addEventListener('mouseenter', () => {
+      const content = drop.querySelector('.dropdown-content');
+      if (content) content.style.display = 'block';
+    });
+    drop.addEventListener('mouseleave', () => {
+      const content = drop.querySelector('.dropdown-content');
+      if (content) content.style.display = 'none';
+    });
+  });
+</script>
+
+<main class="page-content" aria-label="Content">
+    <!-- Old -->
+    <!--<div class="wrapper" style="background-color: #1e1e1e; padding: 10px; border-radius: 0px;">--> 
+
+    <div class="wrapper">
+
+        <h1 id="regression">Regression</h1>
+
+<p>One of the primary problems in machine learning is that of regression. That is, given some set of data-points $(x_i, y_i)$, we want to fit some function $f(x_i; \theta_i)$ to those points, where $\theta_i$ are the parameters passed to the fitting function. For each data-point, there will be residual $\epsilon_i$ given by $\epsilon_i = f(x_i; \theta_i) - y_i$, but this can get negative sometimes, and absolute values are discontinuous, so it would be better if we define:</p>
+
+\[\epsilon_i = \bigl(f(x_i;\theta_i) - y_i\bigr)^2\]
+
+<p>We are going to want to minimize the total error of the function:</p>
+
+\[E = \sum\limits_{i=0}^N \epsilon_i = \sum\limits_{i=0}^N \bigl(f(x_i;\theta_i) - y_i\bigr)^2\]
+
+<p>So, we want to consider how $E$ changes with time as $\theta$ is updated:</p>
+
+\[\dot{E} = \frac{dE}{dt} = \sum_{i=1}^N \frac{\partial E}{\partial \theta_i} \frac{d\theta_i}{dt}\]
+
+<p>Here, $\frac{\partial E}{\partial \theta_i}$ is the gradient of $E$ with respect to $\theta_i$, and $\dot{\theta}_i = \frac{d\theta_i}{dt}$ is the rate of change of $\theta_i$ over time.</p>
+
+<p>The gradient of $E$ with respect to $\theta_i$ is given by:</p>
+
+\[\frac{\partial E}{\partial \theta_i} = 2 \sum_{j=0}^N \bigl(f(x_j; \theta_j) - y_j\bigr) \frac{\partial f(x_j; \theta_j)}{\partial \theta_j}\]
+
+<p>To ensure a monotonic decrease in $E$, we postulate that the relationship between $\frac{\partial E}{\partial \theta_i}$ and $\dot{\theta}_i$ is:</p>
+
+\[\frac{\partial E}{\partial \theta_i} = -\dot{\theta}_i\]
+
+<p>This relationship directly connects the change in the parameters $\theta_i$ to the gradient of the error function, ensuring consistency with the chain rule.</p>
+
+<p>Substituting $\frac{\partial E}{\partial \theta_i} = -\dot{\theta}_i$ into the expression for $\dot{E}$, we obtain:</p>
+
+\[\dot{E} = \sum_{i=1}^N \frac{\partial E}{\partial \theta_i} \dot{\theta}_i = \sum_{i=1}^N (-\dot{\theta}_i) \dot{\theta}_i\]
+
+<p>Simplifying:</p>
+
+\[\dot{E} = -\sum_{i=1}^N \dot{\theta}_i^2\]
+
+<p>The term $\sum_{i=1}^N \dot{\theta}_i^2$ represents the squared velocity of the parameters $\theta_i$. This can be interpreted as the “kinetic energy” of the system. Define:</p>
+
+\[K = \frac{1}{2} \|\dot{\theta}\|^2 = \frac{1}{2} \sum_{i=1}^N \dot{\theta}_i^2\]
+
+<p>Thus, the time derivative of the error function can be written as:</p>
+
+\[\dot{E} = -2K\]
+
+<p>So, we want to minimize $E(\theta) - \frac{1}{2}\dot{\theta}^2$, as $E(\theta)$ represents the error, and as $\frac{1}{2}\dot{\theta}^2$ approaches $E(\theta)$, it will “cancel” out the error. So, if we want to minimize the total error over the time we run the optimization algorithm, we effectively want to minimize:</p>
+
+\[\mathcal{E}[E, \theta, \dot{\theta}] = \int_0^t E(\theta) - \dfrac{1}{2}\dot{\theta}^2\; dt = \int_0^t dt\ L(E, \theta, \dot{\theta})\]
+
+<p>So now, we vary the functional as $\delta \mathcal{E}$:</p>
+
+\[\delta \mathcal{E} = \int_0^t dt\; \left[\dfrac{\partial L}{\partial \theta} \delta \theta + \dfrac{\partial L}{\partial \dot{\theta}} \delta \dot{\theta}\right] = \int_0^t dt\; \left[\dfrac{\partial L }{\partial \theta}  - \dfrac{d}{dt} \dfrac{\partial L }{\partial \dot{\theta}}\right]\delta t\]
+
+<p>This is optimized by $\delta \mathcal{E} = 0$, therefore:</p>
+
+\[\dfrac{\partial L }{\partial \theta}  - \dfrac{d}{dt} \dfrac{\partial L }{\partial \dot{\theta}} = 0\]
+
+\[\ddot{\theta} = -\nabla_\theta E(\theta)\]
+
+<hr />
+
+<h2 id="second-order-dynamics-for-accurate-and-stable-updates">Second-Order Dynamics for Accurate and Stable Updates</h2>
+
+<p>To ensure pure accuracy and stability, we retain the full second-order dynamics:</p>
+
+\[\ddot{\theta} = -\nabla_\theta E(\theta) - \gamma \dot{\theta}\]
+
+<p>where $\ddot{\theta}$ represents the acceleration, $-\nabla_\theta E(\theta)$ is the driving force, given by the gradient of the error function $E(\theta)$, and $-\gamma \dot{\theta}$ introduces damping to control oscillations.</p>
+
+<h3 id="symplectic-leapfrog-velocity-verlet-scheme">Symplectic Leapfrog (Velocity-Verlet) Scheme</h3>
+
+<p>A symplectic integrator is employed to preserve the stability and accuracy of the dynamics. The Leapfrog (Velocity-Verlet) scheme is particularly suitable for this purpose. The update rules are as follows:</p>
+
+<ol>
+  <li>
+    <p>Perform a half-step velocity update:</p>
+
+\[v^{n+\frac{1}{2}} = v^n - \frac{\Delta t}{2} \nabla_\theta E(\theta^n)\]
+
+    <p>where $v^n = \dot{\theta}^n$ is the velocity.</p>
+  </li>
+  <li>
+    <p>Update the position:</p>
+
+\[\theta^{n+1} = \theta^n + \Delta t v^{n+\frac{1}{2}}\]
+  </li>
+  <li>
+    <p>Perform a second half-step velocity update:</p>
+
+\[v^{n+1} = v^{n+\frac{1}{2}} - \frac{\Delta t}{2} \nabla_\theta E(\theta^{n+1})\]
+  </li>
+</ol>
+
+<p>This scheme ensures long-term stability and accuracy by preserving the symplectic structure of the dynamics. To further enhance stability in the update scheme, damping is introduced in the velocity update. The modified half-step velocity update is:</p>
+
+\[v^{n+\frac{1}{2}} = v^n - \frac{\Delta t}{2} \nabla_\theta E(\theta^n) - \frac{\gamma \Delta t}{2} v^n\]
+
+<h3 id="adaptive-time-stepping">Adaptive Time Stepping</h3>
+
+<p>To ensure both stability and efficiency, an adaptive time-stepping scheme is used. The time step $\Delta t$ is adjusted dynamically based on the magnitude of the gradient:</p>
+
+\[\Delta t = \min\left(\Delta t_{\text{max}}, \frac{\Delta t_{\text{max}}}{1 + \|\nabla_\theta E(\theta^n)\|}\right)\]
+
+<p>This ensures smaller time steps in regions of steep gradients, preventing instability.</p>
+
+<hr />
+
+<p>Here, I show some examples of the regression algorithm in use. The regression scheme is implemented in C++, and animation is done using Python’s Matplotlib package.</p>
+
+<div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+  <div style="text-align: center; flex: 1; min-width: 300px;">
+    <img src="../assets/files/fit_evolution.mp4" alt="Larson Mass Plot" style="width: auto; height: 400px;" />
+    <p>Figure 1: Gaussian Fit</p>
+  </div>
+
+  <div style="text-align: center; flex: 1; min-width: 300px;">
+    <img src="../assets/files/fit_evolution2.mp4" alt="Shu Mass Plot" style="width: auto; height: 400px;" />
+    <p>Figure 2: Sinusoidal Fit</p>
+  </div>
+</div>
+
+<!---
+<div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+
+  <div style="text-align: center; flex: 1; min-width: 300px;">
+    <img src="../assets/files/fit_evolution.mp4" alt="Larson Mass Plot" style="width: 100%; max-width: 600px; height: auto;">
+    <p>Figure 1: Gaussian Fit</p>
+  </div>
+
+  <div style="text-align: center; flex: 1; min-width: 300px;">
+    <img src="../assets/files/fit_evolution2.mp4" alt="Shu Mass Plot" style="width: 100%; max-width: 500px; height: auto;">
+    <p>Figure 2: Sinusoidal Fit</p>
+  </div>
+
+</div>
+--->
+
+      </div>
+    </main><!--
+<footer class="site-footer h-card">
+  <data class="u-url" href="/richardanderson/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Richard Anderson</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list"><li><a class="u-email" href="mailto:richard.b.anderson@icloud.com">richard.b.anderson@icloud.com</a></li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/mrandrson"><svg class="svg-icon"><use xlink:href="/richardanderson/assets/minima-social-icons.svg#github"></use></svg> <span class="username">mrandrson</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+-->
+<footer style="background-color: #222; padding: 20px 0; text-align: center; font-size: 14px; color: #ffffff;">
+  <p style="font-weight: 600; letter-spacing: 0.5px;">Richard Anderson</p>
+  <p>
+    <a href="mailto:richard.b.anderson@icloud.com" style="color: #cccccc; margin: 0 10px;">richard.b.anderson@icloud.com</a>
+    <a href="https://github.com/mrandrson" style="color: #cccccc; margin: 0 10px;">@mrandrson</a>
+  </p>
+</footer>
+
+
+</body>
+
+</html>
